@@ -108,7 +108,7 @@
       },
       "message": {
         "type": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${message.type}"<#else>""</#if>,
-        "summary": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${kcSanitize(message.summary)?no_esc}"<#else>""</#if>,
+        "summary": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${kcSanitize(message.summary)?no_esc}"<#else>""</#if>
       },
       "realm": {
         "displayName": "${(realm.displayName!'')}"
