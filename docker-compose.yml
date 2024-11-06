@@ -1,0 +1,47 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-pero
+    environment:
+      - POSTGRES_DB=keycloak
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    expose:
+      - 5432
+    volumes:
+      - database_pero:/var/lib/postgresql/data
+    networks:
+      - pero
+    restart: unless-stopped
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.2
+    container_name: keycloak-pero
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres-pero:5432/keycloak
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+      KC_HOSTNAME: localhost
+      KC_KEYCLOAK_ADMIN: admin
+      KC_KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 9020:8080
+    volumes:
+      - ../themes/pero-theme:/opt/keycloak/themes/pero-theme
+      - ./disable-theme-cache.cli:/opt/jboss/startup-scripts/disable-theme-cache.cli
+    depends_on:
+      - postgres
+    networks:
+      - pero
+    command: ["start-dev"]
+    restart: unless-stopped
+
+volumes:
+  database_pero:
+
+networks:
+  pero:
+    external: true
