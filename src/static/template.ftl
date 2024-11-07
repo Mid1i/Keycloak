@@ -1,5 +1,5 @@
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//RU"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}">
 
 <head>
@@ -71,7 +71,6 @@
       "labels": {
         "firstName": "${msg("firstName")}",
         "lastName": "${msg("lastName")}",
-        "username": "${msg("username")}",
         "usernameOrEmail": "${msg("usernameOrEmail")}",
         "email": "${msg("email")}",
         "password": "${msg("password")}",
@@ -79,12 +78,9 @@
         "rememberMe": "${msg("rememberMe")}",
         "doForgotPassword": "${msg("doForgotPassword")}",
         "doLogIn": "${msg("doLogIn")}",
-        "doSubmit": "${msg("doSubmit")}",
         "noAccount": "${msg("noAccount")}",
         "doRegister": "${msg("doRegister")}",
-        "backToLogin": "${kcSanitize(msg("backToLogin"))?no_esc}",
-        "confirmLinkIdpContinue": "${msg("confirmLinkIdpContinue")}",
-        "doClickHere": "${msg("doClickHere")}"
+        "or": "${msg("or")}"
       },
       "forms": {
         "loginUsername": "${(login.username!'')}",
@@ -129,7 +125,7 @@
           <#list social.providers as p>
             { 
               "alias": "${p.alias}",
-              "displayName": "${p.displayName!}",
+              "displayName": "${msg("doContinueWith", p.displayName!)}",
               "loginUrl": "${p.loginUrl}"
             }<#sep>, </#sep>
           </#list>

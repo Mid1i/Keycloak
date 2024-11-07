@@ -49,14 +49,19 @@
 			background: $background-secondary;
 
 			display: flex;
-			flex: 0 0 700px;
+			flex: 0 0 min(48vw, 800px);
 			flex-direction: column;
 			justify-content: space-between;
 
 			position: relative;
 
-			padding: 100px;
-			padding-right: 50px;
+			padding: 7vw;
+			padding-right: 3.5vw;
+		}
+
+		&__right {
+			flex: 1 0 auto;
+			height: 100%;
 		}
 
 		&__background {
@@ -117,6 +122,11 @@
 			&__left {
 				flex: 0 0 auto;
 				padding: 60px 100px;
+			}
+
+			&__right {
+				flex: 0 0 auto;
+				height: auto;
 			}
 
 			&__bottom {

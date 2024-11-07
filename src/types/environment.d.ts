@@ -39,6 +39,7 @@ export interface EnvLabel {
   doLogIn: string
   doRegister: string
   doSubmit: string
+  or: string
   email: string
   firstName: string
   lastName: string
