@@ -25,8 +25,8 @@ services:
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: postgres
       KC_HOSTNAME: localhost
-      KC_KEYCLOAK_ADMIN: admin
-      KC_KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
       - 9020:8080
     volumes:
