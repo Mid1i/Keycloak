@@ -24,7 +24,7 @@ export const useLogin = () => {
     return env.labels.email
   }
 
-  const getImage = (url: string): string => `${env.urls.resourcesPath}/img${url}`;
+  const getImage = (url: string): string => `${env.urls.resourcesPath}/images${url}`;
 
   const getSummary = (message: string): string => message.replace(/(&#64;)/g, "@");
 
