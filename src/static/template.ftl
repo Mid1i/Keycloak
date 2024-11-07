@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="robots" content="noindex, nofollow">
-    <#--  <title>${msg("loginTitle",(realm.displayName!''))}</title>  -->
+    
     <title>${(realm.displayName!'Личный кабинет')}</title>
     
-    <link rel="icon" href="${url.resourcesPath}/images/logo.svg">
+    <link rel="icon" href="${url.resourcesPath}/icons/logo.svg">
 
     <style>
       @font-face {
@@ -46,12 +47,15 @@
         "resourcesPath": "${url.resourcesPath}"
       },
       "titles": {
-        "loginProfileTitle": "${msg("loginProfileTitle")}",
-        "loginAccountTitle": "${msg("loginAccountTitle")}",
+        "logoTitle": "${msg("logoTitle")}",
+        "mainTitle": "${msg("mainTitle")}",
+        "mainSubtitle": "${msg("mainSubtitle")}",
         "registerTitle": "${msg("registerTitle")}",
-        "emailForgotTitle": "${msg("emailForgotTitle")}",
-        "confirmLinkIdpTitle": "${msg("confirmLinkIdpTitle")}",
-        "emailLinkIdpTitle": "${msg("emailLinkIdpTitle", idpDisplayName)}"
+        "loginTitle": "${msg("loginTitle")}",
+        "verifyEmailTitle": "${msg("verifyEmailTitle")}",
+        "checkEmailTitle": "${msg("checkEmailTitle")}",
+        "resetPasswordTitle": "${msg("resetPasswordTitle")}",
+        "termsAndPrivacy": "${msg("termsAndPrivacy")}"
       },
       "permissions": {
         "usernameEditDisabled": <#if usernameEditDisabled??>true<#else>false</#if>,
