@@ -26,6 +26,8 @@ export const useLogin = () => {
 
   const getImage = (url: string): string => `${env.urls.resourcesPath}/images${url}`;
 
+  const getIcon = (url: string): string => `${env.urls.resourcesPath}/icons${url}`;
+
   const getSummary = (message: string): string => message.replace(/(&#64;)/g, "@");
 
   const getUrl = (url: string): string => url.replace(/(&amp;)/g, "&");
@@ -42,6 +44,7 @@ export const useLogin = () => {
     urls: computed(() => env.urls as EnvUrl),
     user: computed(() => env.user as EnvUser),
     validations: computed(() => env.validations as EnvValidation),
+    getIcon,
     getImage,
     getUrl,
     getUsernameLabel,
