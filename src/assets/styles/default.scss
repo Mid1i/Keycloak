@@ -1,3 +1,6 @@
+@import "./variables.scss";
+
+
 *, 
 *::after,
 *::before {
@@ -5,6 +8,8 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+
+  user-select: none;
 }	
 
 *:focus, 
@@ -15,8 +20,8 @@
 
 html, 
 body {
-  background: #FFFFFF;
-  color: #040308;
+  background: $background-primary;
+  color: $text-primary;
 
   font-family: "Inter", sans-serif;
   font-size: 16px;
