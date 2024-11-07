@@ -8,12 +8,15 @@ export interface EnvUrl {
 }
 
 export interface EnvTitle {
-  confirmLinkIdpTitle: string
-  emailForgotTitle: string
-  emailLinkIdpTitle: string
-  loginAccountTitle: string
-  loginProfileTitle: string
-  registerTitle: string
+  logoTitle: string,
+  mainTitle: string,
+  mainSubtitle: string,
+  registerTitle: string,
+  loginTitle: string,
+  verifyEmailTitle: string,
+  checkEmailTitle: string,
+  resetPasswordTitle: string,
+  termsAndPrivacy: string
 }
 
 export interface EnvPermission {
