@@ -42,7 +42,7 @@
 		align-items: stretch;
 		display: flex;
 
-		height: 100vh;
+		min-height: 100vh;
 		width: 100vw;
 
 		&__left {
@@ -60,7 +60,7 @@
 		}
 
 		&__right {
-			flex: 1 0 auto;
+			flex: 1 1 auto;
 			height: 100%;
 		}
 
@@ -117,11 +117,10 @@
 	@media(max-width: 1024px) {
 		.container {
 			flex-direction: column;
-			height: auto;
 
 			&__left {
 				flex: 0 0 auto;
-				padding: 60px 100px;
+				padding: 50px;
 			}
 
 			&__right {
@@ -144,11 +143,15 @@
 
 	@media(max-width: 500px) {
 		.container__left {
-			padding: 30px 50px;
+			padding: 10px 20px;
 		}
 
 		.container__background {
 			right: -165px;
+		}
+
+		.container__right {
+			flex: 1 0 auto;
 		}
 
 		.container__title {
