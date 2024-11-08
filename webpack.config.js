@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
         "@": path.resolve(__dirname, "src"),
         "@/assets": path.resolve(__dirname, "src/assets"),
         "@/components": path.resolve(__dirname, "src/components"),
-        "@/helpers": path.resolve(__dirname, "src/helpers"),
+        "@/messages": path.resolve(__dirname, "src/messages"),
         "@/hooks": path.resolve(__dirname, "src/hooks"),
         "@/layouts": path.resolve(__dirname, "src/layouts"),
         "@/types": path.resolve(__dirname, "src/types"),
@@ -96,6 +96,7 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           { from: path.resolve(__dirname, "src", "static"), to: path.resolve(__dirname, "..", "themes", THEME_NAME, "login") },
+          { from: path.resolve(__dirname, "src", "messages"), to: path.resolve(__dirname, "..", "themes", THEME_NAME, "login", "messages") },
           { from: path.resolve(__dirname, "src", "assets"), to: path.resolve(__dirname, "..", "themes", THEME_NAME, "login", "resources") }
         ],
       }),
