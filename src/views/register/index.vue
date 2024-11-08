@@ -21,7 +21,7 @@
 	}
 
 
-	const { social, forms, permissions, validations, labels, titles, urls, getUrl, getIcon } = useLogin();
+	const { social, forms, validations, labels, titles, urls, getUrl, getIcon } = useLogin();
 
 	const formValue = ref<IForm>({
 		firstName: "",
