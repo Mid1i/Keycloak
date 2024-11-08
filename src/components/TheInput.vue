@@ -82,6 +82,7 @@
 
 			&.error {
 				color: $text-negative;
+				font-weight: 600;
 			}
 		}
 
@@ -127,6 +128,22 @@
 	@media(hover: hover) {
 		.field__input:hover {
 			border-color: $text-accent;
+		}
+	}
+
+	@media(max-width: 500px) {
+		.field__label {
+			font-size: 14px;
+			left: 15px;
+		}
+
+		.field__input {
+			padding: 0px 10px;
+			height: 45px;
+
+			&.password {
+				padding-right: 45px;
+			}
 		}
 	}
 </style>

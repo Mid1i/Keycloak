@@ -104,4 +104,22 @@
 			}
 		}
 	}
+
+	@media(max-width: 500px) {
+		.field {
+			font-size: 14px;
+			gap: 10px;
+
+			&__checkbox {
+				height: 16px;
+				width: 16px;
+			}
+
+			&__check {
+				top: 5px;
+				height: 8px;
+				width: 8px;
+			}
+		}
+	}
 </style>

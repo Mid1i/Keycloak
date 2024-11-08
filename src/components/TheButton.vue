@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	defineProps<{
-		disabled: boolean
+		disabled?: boolean
 	}>();
 </script>
 
@@ -39,6 +39,13 @@
 	@media(hover: hover) {
 		.button:not(:disabled):hover {
 			background: $background-accent-hover;
+		}
+	}
+
+	@media(max-width: 500px) {
+		.button {
+			font-size: 14px;
+			height: 40px;
 		}
 	}
 </style>

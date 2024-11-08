@@ -35,4 +35,11 @@
 			height: 1px;
 		}
 	}
+
+
+	@media(max-width: 500px) {
+		.line {
+			font-size: 14px;
+		}
+	}
 </style>
