@@ -1,6 +1,7 @@
 <script setup lang="ts">
 	import { ref } from "vue";
 
+	import TheSocialLink from "@/components/TheSocialLink.vue";
 	import TheCheckbox from "@/components/TheCheckbox.vue";
 	import TheLineText from "@/components/TheLineText.vue";
 	import TheContainer from "@/layouts/TheContainer.vue";
@@ -75,22 +76,15 @@
 					type="hidden"
 				/>
 
-				<TheButton :disabled="!formValue.email || !formValue.password">{{ labels.doLogIn }}</TheButton>
+				<TheButton class="login__button">{{ labels.doLogIn }}</TheButton>
 			</form>
 			<TheLineText v-if="social.length > 0"/>
 			<div class="login__social">
-				<a 
+				<TheSocialLink
 					v-for="el in social" 
-					:href="el.loginUrl"
-					class="login__social-link"
-				>
-					<img 
-						:alt="el.displayName" 
-						:src="getIcon(`/social/${el.alias}.svg`)"
-						class="login__social-image" 
-					/>
-					{{ el.displayName }}
-				</a>
+					:key="el.displayName"
+					:="el"
+				/>
 			</div>
 		</section>
 	</TheContainer>
@@ -146,6 +140,10 @@
 			}
 		}
 
+		&__button {
+			margin-top: 10px;
+		}
+
 		&__row {
 			align-items: center;
 			display: flex;
@@ -156,30 +154,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: 20px;
-
-			&-link {
-				border: 1px solid $background-secondary;
-				border-radius: 5px;
-
-				font-weight: 600;
-				font-size: 16px;
-
-				align-items: center;
-				display: flex;
-				justify-content: center;
-				gap: 10px;
-
-				height: 50px;
-				width: 100%;
-
-				transition: all 0.1s ease-in-out;
-			}
-
-			&-image {
-				object-fit: contain;
-				height: 19px;
-				width: 19px;
-			}
 		}
 	}
 
@@ -188,17 +162,13 @@
 		.login__text--accent:hover {
 			text-decoration: underline;
 		}
-
-		.login__social-link:hover {
-			border-color: $text-accent;
-			color: $text-accent;
-		}
 	}
 
 	@media(max-width: 1024px) {
 		.login {
 			max-width: 800px;
-			padding: 60px 100px;
+			padding: 50px;
+			padding-top: 100px;
 
 			margin: 0px auto;
 		}
@@ -206,7 +176,18 @@
 
 	@media(max-width: 500px) {
 		.login {
-			padding: 50px;
+			padding: 20px;
+			padding-top: 100px;
+
+			&__title {
+				font-size: 28px;
+				margin-bottom: 5px;
+			}
+
+			&__text {
+				font-size: 14px;
+				margin-bottom: 80px;
+			}
 		}
 	}
 </style>

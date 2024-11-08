@@ -44,6 +44,7 @@ export interface EnvLabel {
   firstName: string
   lastName: string
   noAccount: string
+  haveAccount: string
   password: string
   passwordConfirm: string
   rememberMe: string
