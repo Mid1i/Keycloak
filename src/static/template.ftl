@@ -79,6 +79,7 @@
         "doForgotPassword": "${msg("doForgotPassword")}",
         "doLogIn": "${msg("doLogIn")}",
         "noAccount": "${msg("noAccount")}",
+        "haveAccount": "${msg("haveAccount")}",
         "doRegister": "${msg("doRegister")}",
         "or": "${msg("or")}"
       },
